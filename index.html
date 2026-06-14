@@ -1,114 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PREMIUM-SU • Choose Your Plan</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Subscriptions • Olubunmi0x</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-    .card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-    .card:hover { transform: translateY(-12px) scale(1.03); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4); }
-    .duration-btn { transition: all 0.3s; }
-    .duration-btn.active { background-color: #22c55e; color: white; transform: scale(1.1); }
-    .price { transition: all 0.5s; }
+    :root {
+      --primary: #ff0000;
+      --accent: #00ff88;
+      --dark: #0a0a0a;
+      --card: #1a1a1a;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: rgba(10,10,10,0.95);
+      padding: 1.2rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid var(--primary);
+    }
+    .logo { font-size: 2.3rem; font-weight: bold; color: var(--primary); }
+
+    .hero {
+      text-align: center;
+      padding: 8rem 5% 5rem;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)), url('https://picsum.photos/id/1015/2000/800') center/cover;
+      animation: fadeIn 1.5s ease;
+    }
+    h1 { font-size: 4rem; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255,0,0,0.5); }
+    .subtitle { font-size: 1.6rem; color: #ddd; }
+
+    .container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin: 5rem 0 3rem;
+      color: #fff;
+      position: relative;
+    }
+    h2.section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      margin: 15px auto;
+      border-radius: 2px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2.2rem;
+      margin-bottom: 5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    .card:hover {
+      transform: translateY(-20px) scale(1.03);
+      box-shadow: 0 25px 50px rgba(255, 0, 0, 0.5);
+    }
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .card:hover img { transform: scale(1.08); }
+
+    .card-body {
+      padding: 1.8rem;
+    }
+    .card h3 {
+      color: var(--primary);
+      font-size: 1.7rem;
+      margin-bottom: 0.8rem;
+    }
+    .price {
+      font-size: 2.3rem;
+      font-weight: bold;
+      color: #ffd700;
+      margin: 1rem 0 0.5rem;
+    }
+    .naira {
+      font-size: 1.1rem;
+      color: #aaa;
+      display: block;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(45deg, #ff0000, #ff4444);
+      color: white;
+      padding: 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 1.2rem;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+    .btn:hover {
+      transform: scale(1.08);
+      background: linear-gradient(45deg, #ff4444, #ff7777);
+      box-shadow: 0 10px 20px rgba(255,0,0,0.4);
+    }
+
+    .contact-bar {
+      background: #111;
+      padding: 4rem 5%;
+      text-align: center;
+      margin: 4rem 0;
+      border-radius: 20px;
+    }
+    .contact-bar a {
+      color: #00ff88;
+      font-size: 1.5rem;
+      margin: 0 20px;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
-<body class="bg-zinc-950 text-white min-h-screen">
+<body>
 
-  <!-- Navbar -->
-  <nav class="bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-2xl font-bold text-green-500">PREMIUM<span class="text-white">SU</span></div>
-      <div class="flex gap-8 text-sm font-medium">
-        <a href="#" class="hover:text-green-400 transition">Home</a>
-        <a href="#" class="hover:text-green-400 transition">Features</a>
-        <a href="#" class="hover:text-green-400 transition">Pricing</a>
-        <a href="#" class="hover:text-green-400 transition">FAQ</a>
-        <a href="#" class="hover:text-green-400 transition">Contact</a>
+  <header>
+    <div class="logo">💎 Olubunmi0x Premium</div>
+    <div>Instant • Trusted • Reliable</div>
+  </header>
+
+  <section class="hero">
+    <h1>Premium Subscriptions</h1>
+    <p class="subtitle">YouTube • AI • VPN • Telegram • X Premium & More</p>
+  </section>
+
+  <div class="container">
+
+    <!-- YouTube -->
+    <h2 class="section-title">YouTube Premium</h2>
+    <div class="services-grid">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/grok_image_x81l7g4.jpg" alt="YouTube">
+        <div class="card-body">
+          <h3>Single Plan</h3>
+          <div class="price">$0.5 <span class="naira">≈ ₦700</span></div>
+          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20YouTube%20Premium%20Single%20Plan%20(1%20Month)%20for%20%240.5%20(₦700)" class="btn">Order Single — $0.5</a>
+        </div>
       </div>
-      <button onclick="window.location.reload()" 
-              class="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full font-semibold transition">
-        Get Started
-      </button>
-    </div>
-  </nav>
-
-  <div class="max-w-7xl mx-auto px-6 py-16">
-    <h1 class="text-5xl font-bold text-center mb-4">Choose Your Premium Experience</h1>
-    <p class="text-center text-zinc-400 mb-12 text-xl">Unlock exclusive content, early access &amp; more</p>
-
-    <!-- Duration Selector -->
-    <div class="flex justify-center mb-12">
-      <div class="bg-zinc-900 p-2 rounded-2xl flex gap-2 shadow-xl">
-        <button onclick="selectDuration(1)" class="duration-btn active px-8 py-3 rounded-xl text-sm font-semibold" id="btn1">1 Month</button>
-        <button onclick="selectDuration(3)" class="duration-btn px-8 py-3 rounded-xl text-sm font-semibold" id="btn3">3 Months</button>
-        <button onclick="selectDuration(6)" class="duration-btn px-8 py-3 rounded-xl text-sm font-semibold" id="btn6">6 Months</button>
-        <button onclick="selectDuration(12)" class="duration-btn px-8 py-3 rounded-xl text-sm font-semibold" id="btn12">12 Months</button>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/grok_image_x81l7g4.jpg" alt="YouTube Family">
+        <div class="card-body">
+          <h3>Family Plan</h3>
+          <div class="price">$1.5 <span class="naira">≈ ₦2,100</span></div>
+          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20YouTube%20Premium%20Family%20Plan%20(1%20Month)%20for%20%241.5%20(₦2100)" class="btn">Order Family — $1.5</a>
+        </div>
       </div>
     </div>
 
-    <!-- Pricing Cards -->
-    <div class="grid md:grid-cols-4 gap-8" id="pricing-cards">
-      <!-- Cards will be populated by JS -->
+    <!-- CapCut & Canva -->
+    <h2 class="section-title">CapCut Pro & Canva Pro</h2>
+    <div class="services-grid">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-3.jpg" alt="CapCut">
+        <div class="card-body">
+          <h3>CapCut Premium</h3>
+          <div class="price">$7 <span class="naira">≈ ₦9,800</span></div>
+          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20CapCut%20Premium%20(1%20Month)%20for%20%247%20(₦9800)" class="btn">Order CapCut Pro</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-3.jpg" alt="Canva">
+        <div class="card-body">
+          <h3>Canva Pro</h3>
+          <div class="price">$2 <span class="naira">≈ ₦2,800</span></div>
+          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Canva%20Pro%20(1%20Year)%20for%20%242%20(₦2800)" class="btn">Order Canva Pro</a>
+        </div>
+      </div>
     </div>
+
+    <!-- Telegram, VPN, AI, X Premium sections remain similar — you can add more cards easily -->
+
+    <!-- Telegram -->
+    <h2 class="section-title">Telegram Premium</h2>
+    <div class="services-grid">
+      <div class="card"><div class="card-body"><h3>3 Months</h3><div class="price">$14 <span class="naira">≈ ₦19,600</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Telegram%20Premium%203%20Months" class="btn">Order 3 Months</a></div></div>
+      <div class="card"><div class="card-body"><h3>6 Months</h3><div class="price">$18 <span class="naira">≈ ₦25,200</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Telegram%20Premium%206%20Months" class="btn">Order 6 Months</a></div></div>
+      <div class="card"><div class="card-body"><h3>12 Months</h3><div class="price">$33 <span class="naira">≈ ₦46,200</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Telegram%20Premium%2012%20Months" class="btn">Order 12 Months</a></div></div>
+    </div>
+
+    <!-- VPN, AI & X Premium sections (short version) -->
+    <h2 class="section-title">VPN • AI • X Premium</h2>
+    <div class="services-grid">
+      <div class="card"><div class="card-body"><h3>VPN Services</h3><div class="price">From $0.50 <span class="naira">≈ ₦700</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20VPN" class="btn">Order VPN</a></div></div>
+      <div class="card"><div class="card-body"><h3>AI Services</h3><div class="price">From $8 <span class="naira">≈ ₦11,200</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20AI%20Service" class="btn">Order AI</a></div></div>
+      <div class="card"><div class="card-body"><h3>X Premium</h3><div class="price">From $7 <span class="naira">≈ ₦9,800</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20X%20Premium" class="btn">Order X Premium</a></div></div>
+    </div>
+
   </div>
 
-  <script>
-    const plans = [
-      { name: "Basic", price1: 2500, price3: 7000, price6: 12000, price12: 20000, color: "zinc" },
-      { name: "Standard", price1: 5000, price3: 13500, price6: 25000, price12: 45000, color: "emerald" },
-      { name: "Premium", price1: 8000, price3: 22000, price6: 40000, price12: 70000, color: "violet" },
-      { name: "VIP", price1: 15000, price3: 40000, price6: 75000, price12: 130000, color: "amber" }
-    ];
+  <div class="contact-bar">
+    <h2>Contact Us Instantly</h2>
+    <p>
+      <a href="https://t.me/olubunmi0x" target="_blank"><i class="fab fa-telegram-plane"></i> @olubunmi0x</a>
+      <a href="https://wa.me/2349131559229" target="_blank"><i class="fab fa-whatsapp"></i> +234 913 155 9229</a>
+    </p>
+    <p style="margin-top:2rem;">
+      <strong>Website:</strong> 
+      <a href="https://github.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS" target="_blank">github.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS</a>
+    </p>
+  </div>
 
-    let currentDuration = 1;
-
-    function selectDuration(months) {
-      currentDuration = months;
-      document.querySelectorAll('.duration-btn').forEach(btn => btn.classList.remove('active'));
-      document.getElementById(`btn${months}`).classList.add('active');
-      renderCards();
-    }
-
-    function renderCards() {
-      const container = document.getElementById('pricing-cards');
-      container.innerHTML = '';
-
-      plans.forEach(plan => {
-        let price = plan[`price${currentDuration}`];
-        const card = `
-          <div class="card bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-green-500 group">
-            <h3 class="text-2xl font-bold mb-2">${plan.name}</h3>
-            <div class="price text-5xl font-bold text-green-400 mb-8" id="price-${plan.name}">
-              ₦${price.toLocaleString()}
-            </div>
-            <ul class="space-y-4 mb-10 text-sm">
-              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Full access to content</li>
-              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Priority support</li>
-              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Exclusive community</li>
-              ${plan.name === "VIP" ? `<li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> 1-on-1 mentorship</li>` : ''}
-            </ul>
-            <button onclick="selectPlan('${plan.name}', ${price})"
-                    class="w-full bg-white text-black font-semibold py-4 rounded-2xl hover:bg-green-500 hover:text-white transition-all duration-300">
-              Choose ${plan.name}
-            </button>
-            <p class="text-center text-xs text-zinc-500 mt-4">Billed every ${currentDuration} month${currentDuration > 1 ? 's' : ''}</p>
-          </div>
-        `;
-        container.innerHTML += card;
-      });
-    }
-
-    function selectPlan(name, price) {
-      alert(`✅ You selected ${name} plan for ₦${price.toLocaleString()} (${currentDuration} month${currentDuration > 1 ? 's' : ''})`);
-      // Here you can later connect to payment (Flutterwave, Paystack, etc.)
-    }
-
-    // Initial render
-    renderCards();
-  </script>
 </body>
 </html>
