@@ -3,81 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Olubunmi0x Premium • Elite Subscriptions</title>
+  <title>Olubunmi0x Premium Subscriptions</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
   <style>
     :root {
       --primary: #ff0033;
       --accent: #00ff9d;
-      --glow: rgba(0, 255, 157, 0.3);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%);
+      background: linear-gradient(135deg, #0a0a0a, #1a0033);
       color: #fff;
-      line-height: 1.8;
+      line-height: 1.7;
     }
 
     nav {
       background: rgba(10,10,10,0.95);
-      backdrop-filter: blur(15px);
-      padding: 1.2rem 5%;
+      padding: 1rem 5%;
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255,0,51,0.3);
+      border-bottom: 1px solid #333;
     }
     nav ul {
       display: flex;
-      gap: 2.5rem;
+      gap: 2.2rem;
       list-style: none;
       justify-content: center;
       flex-wrap: wrap;
     }
-    nav a {
-      color: #ddd;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-    }
-    nav a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+    nav a { color: #ddd; text-decoration: none; font-weight: 600; }
+    nav a:hover { color: var(--accent); }
 
     .hero {
       text-align: center;
-      padding: 8rem 5% 6rem;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(26,0,51,0.8)), url('https://picsum.photos/id/1015/2000/900') center/cover;
+      padding: 7rem 5% 5rem;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://picsum.photos/id/1015/2000/900') center/cover;
     }
     .hero h1 {
-      font-size: 4.5rem;
+      font-size: 4rem;
       background: linear-gradient(90deg, #ff0033, #00ff9d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 30px var(--glow);
     }
 
     .container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
 
     .category {
-      margin: 6rem 0;
-      background: #0f0f0f;
-      border-radius: 28px;
+      margin: 5rem 0;
+      background: #121212;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-      transition: all 0.5s ease;
-    }
-    .category:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 30px 80px rgba(255,0,51,0.25);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     }
 
+    /* === BIGGER IMAGES === */
     .category-header {
+      height: 380px;              /* Increased height for bigger image */
       position: relative;
-      height: 260px;
       display: flex;
-      align-items: center;
-      padding: 0 3rem;
-      background: linear-gradient(90deg, rgba(26,0,51,0.9), rgba(15,15,15,0.95));
+      align-items: flex-end;
+      padding: 0 2.5rem 2rem;
     }
     .category-header img {
       width: 100%;
@@ -86,80 +73,71 @@
       position: absolute;
       top: 0;
       left: 0;
-      z-index: -1;
-      filter: brightness(0.75);
+      z-index: 1;
+      filter: brightness(0.65);
     }
     .category-header h2 {
-      font-size: 3rem;
+      font-size: 2.8rem;
+      position: relative;
       z-index: 2;
-      text-shadow: 0 0 20px rgba(0,0,0,0.8);
+      text-shadow: 0 4px 15px rgba(0,0,0,0.9);
     }
 
     .plans {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.7s ease;
-      background: #0a0a0a;
+      transition: max-height 0.6s ease;
+      background: #0f0f0f;
     }
     .plans.active { max-height: 3200px; }
 
     .plan-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 2rem;
       padding: 3rem;
     }
 
     .plan-card {
       background: #1a1a1a;
-      border-radius: 20px;
-      padding: 2.2rem;
-      transition: all 0.4s ease;
-      border: 1px solid #222;
+      border-radius: 18px;
+      padding: 2rem;
+      transition: all 0.4s;
+      border: 1px solid #333;
     }
     .plan-card:hover {
-      transform: translateY(-15px) scale(1.03);
-      border-color: var(--accent);
-      box-shadow: 0 25px 50px var(--glow);
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(0, 255, 157, 0.2);
     }
 
     .price {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       font-weight: 700;
       color: #ffd700;
-      margin: 1.2rem 0 0.5rem;
+      margin: 1rem 0 0.5rem;
     }
-    .naira { font-size: 1.2rem; color: #aaa; }
+    .naira { font-size: 1.15rem; color: #aaa; }
 
     .btn {
       width: 100%;
-      padding: 18px;
+      padding: 16px;
       background: linear-gradient(45deg, var(--primary), #ff3366);
       color: white;
       border: none;
       border-radius: 50px;
       font-weight: bold;
-      font-size: 1.15rem;
       cursor: pointer;
-      transition: all 0.4s;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
+      transition: all 0.3s;
     }
     .btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 15px 35px rgba(255,0,51,0.5);
-    }
-
-    .contact {
-      text-align: center;
-      padding: 5rem 5%;
-      background: linear-gradient(135deg, #1a0033, #0f0f0f);
-      margin: 6rem auto;
-      border-radius: 28px;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav>
     <ul>
       <li><a href="#youtube">YouTube</a></li>
@@ -172,16 +150,16 @@
   </nav>
 
   <section class="hero">
-    <h1>Elite Premium Subscriptions</h1>
-    <p style="font-size:1.8rem; margin-top:1rem; color:#ddd;">Instant • Reliable • Premium Experience</p>
+    <h1>Premium Subscriptions</h1>
+    <p style="font-size:1.6rem; color:#ddd;">Instant Delivery • Trusted Service</p>
   </section>
 
   <div class="container">
 
-    <!-- YouTube -->
+    <!-- YouTube Premium -->
     <div id="youtube" class="category">
       <div class="category-header">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/grok_image_x81l7g4.jpg" alt="YouTube">
+        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/grok_image_x81l7g4.jpg" alt="YouTube Premium">
         <h2>YouTube Premium</h2>
       </div>
       <div class="plans active">
@@ -189,7 +167,7 @@
           <div class="plan-card">
             <h3>Single Plan — 1 Month</h3>
             <div class="price">$0.5 <span class="naira">≈ ₦700</span></div>
-            <p>Use your own Gmail • No password needed</p>
+            <p>Use your own Gmail • No password required</p>
             <button class="btn" onclick="orderWhatsApp('YouTube Premium Single Plan (1 Month)', '0.5')">Order Single Plan</button>
           </div>
           <div class="plan-card">
@@ -224,17 +202,17 @@
       </div>
     </div>
 
-    <!-- Telegram -->
+    <!-- Telegram Premium -->
     <div id="telegram" class="category">
       <div class="category-header">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-2.jpg" alt="Telegram">
+        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-2.jpg" alt="Telegram Premium">
         <h2>Telegram Premium</h2>
       </div>
       <div class="plans active">
         <div class="plan-grid">
-          <div class="plan-card"><h3>3 Months</h3><div class="price">$14 <span class="naira">≈ ₦19,600</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium 3 Months', '14')">Order 3 Months</button></div>
-          <div class="plan-card"><h3>6 Months</h3><div class="price">$18 <span class="naira">≈ ₦25,200</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium 6 Months', '18')">Order 6 Months</button></div>
-          <div class="plan-card"><h3>12 Months</h3><div class="price">$33 <span class="naira">≈ ₦46,200</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium 12 Months', '33')">Order 12 Months</button></div>
+          <div class="plan-card"><h3>3 Months</h3><div class="price">$14 <span class="naira">≈ ₦19,600</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium (3 Months)', '14')">Order 3 Months</button></div>
+          <div class="plan-card"><h3>6 Months</h3><div class="price">$18 <span class="naira">≈ ₦25,200</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium (6 Months)', '18')">Order 6 Months</button></div>
+          <div class="plan-card"><h3>12 Months</h3><div class="price">$33 <span class="naira">≈ ₦46,200</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium (12 Months)', '33')">Order 12 Months</button></div>
         </div>
       </div>
     </div>
@@ -247,49 +225,55 @@
       </div>
       <div class="plans active">
         <div class="plan-grid">
-          <div class="plan-card"><h3>Normal - 3 Months</h3><div class="price">$7 <span class="naira">≈ ₦9,800</span></div><button class="btn" onclick="orderWhatsApp('X Premium Normal 3 Months', '7')">Order Normal</button></div>
-          <div class="plan-card"><h3>Normal - 6 Months</h3><div class="price">$11 <span class="naira">≈ ₦15,400</span></div><button class="btn" onclick="orderWhatsApp('X Premium Normal 6 Months', '11')">Order Normal</button></div>
-          <div class="plan-card"><h3>Premium Plus - 3 Months</h3><div class="price">$15 <span class="naira">≈ ₦21,000</span></div><button class="btn" onclick="orderWhatsApp('X Premium Plus 3 Months', '15')">Order Plus</button></div>
-          <div class="plan-card"><h3>Premium Plus - 6 Months</h3><div class="price">$19 <span class="naira">≈ ₦26,600</span></div><button class="btn" onclick="orderWhatsApp('X Premium Plus 6 Months', '19')">Order Plus</button></div>
-          <div class="plan-card"><h3>Premium Plus - 12 Months</h3><div class="price">$27 <span class="naira">≈ ₦37,800</span></div><button class="btn" onclick="orderWhatsApp('X Premium Plus 12 Months', '27')">Order Plus</button></div>
+          <div class="plan-card"><h3>Normal - 3 Months</h3><div class="price">$7 <span class="naira">≈ ₦9,800</span></div><button class="btn" onclick="orderWhatsApp('X Premium Normal (3 Months)', '7')">Order Normal</button></div>
+          <div class="plan-card"><h3>Normal - 6 Months</h3><div class="price">$11 <span class="naira">≈ ₦15,400</span></div><button class="btn" onclick="orderWhatsApp('X Premium Normal (6 Months)', '11')">Order Normal</button></div>
+          <div class="plan-card"><h3>Premium Plus - 3 Months</h3><div class="price">$15 <span class="naira">≈ ₦21,000</span></div><button class="btn" onclick="orderWhatsApp('X Premium Plus (3 Months)', '15')">Order Plus</button></div>
+          <div class="plan-card"><h3>Premium Plus - 6 Months</h3><div class="price">$19 <span class="naira">≈ ₦26,600</span></div><button class="btn" onclick="orderWhatsApp('X Premium Plus (6 Months)', '19')">Order Plus</button></div>
+          <div class="plan-card"><h3>Premium Plus - 12 Months</h3><div class="price">$27 <span class="naira">≈ ₦37,800</span></div><button class="btn" onclick="orderWhatsApp('X Premium Plus (12 Months)', '27')">Order Plus</button></div>
         </div>
       </div>
     </div>
 
-    <!-- VPN & AI (you can expand later) -->
+    <!-- VPN Services -->
     <div id="vpn" class="category">
       <div class="category-header">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-1.jpg" alt="VPN">
+        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-1.jpg" alt="VPN Services">
         <h2>VPN Services</h2>
       </div>
       <div class="plans active">
         <div class="plan-grid">
-          <div class="plan-card"><h3>NordVPN 7 Days</h3><div class="price">$0.80 <span class="naira">≈ ₦1,100</span></div><button class="btn" onclick="orderWhatsApp('NordVPN 7 Days', '0.8')">Order</button></div>
-          <div class="plan-card"><h3>IPVanish 7 Days</h3><div class="price">$0.50 <span class="naira">≈ ₦700</span></div><button class="btn" onclick="orderWhatsApp('IPVanish 7 Days', '0.5')">Order</button></div>
+          <div class="plan-card"><h3>NordVPN - 7 Days</h3><div class="price">$0.80 <span class="naira">≈ ₦1,100</span></div><button class="btn" onclick="orderWhatsApp('NordVPN 7 Days', '0.8')">Order</button></div>
+          <div class="plan-card"><h3>IPVanish - 7 Days</h3><div class="price">$0.50 <span class="naira">≈ ₦700</span></div><button class="btn" onclick="orderWhatsApp('IPVanish 7 Days', '0.5')">Order</button></div>
+          <div class="plan-card"><h3>ExpressVPN - 7 Days</h3><div class="price">$0.50 <span class="naira">≈ ₦700</span></div><button class="btn" onclick="orderWhatsApp('ExpressVPN 7 Days', '0.5')">Order</button></div>
+          <div class="plan-card"><h3>HMA VPN - 7 Days</h3><div class="price">$0.50 <span class="naira">≈ ₦700</span></div><button class="btn" onclick="orderWhatsApp('HMA VPN 7 Days', '0.5')">Order</button></div>
+          <div class="plan-card"><h3>Proton VPN - 14 Days</h3><div class="price">$1.00 <span class="naira">≈ ₦1,400</span></div><button class="btn" onclick="orderWhatsApp('Proton VPN 14 Days', '1')">Order</button></div>
         </div>
       </div>
     </div>
 
+    <!-- AI Services -->
     <div id="ai" class="category">
       <div class="category-header">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image.jpg" alt="AI">
+        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image.jpg" alt="AI Services">
         <h2>Premium AI Services</h2>
       </div>
       <div class="plans active">
         <div class="plan-grid">
-          <div class="plan-card"><h3>ChatGPT Plus - 1 Month</h3><div class="price">$8 <span class="naira">≈ ₦11,200</span></div><button class="btn" onclick="orderWhatsApp('ChatGPT Plus 1 Month', '8')">Order</button></div>
-          <div class="plan-card"><h3>Gemini Advanced - 1 Year</h3><div class="price">$15 <span class="naira">≈ ₦21,000</span></div><button class="btn" onclick="orderWhatsApp('Gemini Advanced 1 Year', '15')">Order</button></div>
-          <div class="plan-card"><h3>Grok AI Plus - 3/6/12 Months</h3><div class="price">From $15</div><button class="btn" onclick="orderWhatsApp('Grok AI Plus', '15')">Order Grok AI</button></div>
+          <div class="plan-card"><h3>ChatGPT Plus — 1 Month</h3><div class="price">$8 <span class="naira">≈ ₦11,200</span></div><button class="btn" onclick="orderWhatsApp('ChatGPT Plus (1 Month)', '8')">Order ChatGPT</button></div>
+          <div class="plan-card"><h3>Gemini Advanced — 1 Year</h3><div class="price">$15 <span class="naira">≈ ₦21,000</span></div><button class="btn" onclick="orderWhatsApp('Gemini Advanced (1 Year)', '15')">Order Gemini</button></div>
+          <div class="plan-card"><h3>Grok AI Plus — 3 Months</h3><div class="price">$15 <span class="naira">≈ ₦21,000</span></div><button class="btn" onclick="orderWhatsApp('Grok AI Plus (3 Months)', '15')">Order 3 Months</button></div>
+          <div class="plan-card"><h3>Grok AI Plus — 6 Months</h3><div class="price">$20 <span class="naira">≈ ₦28,000</span></div><button class="btn" onclick="orderWhatsApp('Grok AI Plus (6 Months)', '20')">Order 6 Months</button></div>
+          <div class="plan-card"><h3>Grok AI Plus — 12 Months</h3><div class="price">$25 <span class="naira">≈ ₦35,000</span></div><button class="btn" onclick="orderWhatsApp('Grok AI Plus (12 Months)', '25')">Order 12 Months</button></div>
         </div>
       </div>
     </div>
 
   </div>
 
-  <div class="contact">
-    <h2>Ready to Experience Premium?</h2>
-    <p style="font-size:1.6rem; margin:2rem 0;">
-      <a href="https://t.me/olubunmi0x" target="_blank"><i class="fab fa-telegram"></i> @olubunmi0x</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+  <div class="contact" style="text-align:center; padding:4rem 5%; background:#111; margin:5rem 0; border-radius:24px;">
+    <h2>Ready to Order?</h2>
+    <p style="font-size:1.5rem; margin:1.5rem 0;">
+      <a href="https://t.me/olubunmi0x" target="_blank"><i class="fab fa-telegram"></i> @olubunmi0x</a> &nbsp;&nbsp;
       <a href="https://wa.me/2349131559229" target="_blank"><i class="fab fa-whatsapp"></i> +234 913 155 9229</a>
     </p>
   </div>
@@ -300,5 +284,6 @@
       window.open(`https://wa.me/2349131559229?text=${encodeURIComponent(message)}`, '_blank');
     }
   </script>
+
 </body>
-</html>
+        </html>
