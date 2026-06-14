@@ -1,268 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Premium Subscriptions • Olubunmi0x</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PREMIUM-SU • Choose Your Plan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
-    :root {
-      --primary: #ff0000;
-      --accent: #00ff88;
-      --dark: #0a0a0a;
-      --card: #1a1a1a;
-    }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%);
-      color: #fff;
-      line-height: 1.6;
-    }
-    header {
-      background: rgba(10,10,10,0.95);
-      padding: 1.2rem 5%;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 3px solid var(--primary);
-    }
-    .logo { font-size: 2.2rem; font-weight: bold; color: var(--primary); }
-
-    .hero {
-      text-align: center;
-      padding: 7rem 5% 5rem;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://picsum.photos/id/1015/2000/800') center/cover;
-    }
-    h1 { font-size: 3.8rem; margin-bottom: 0.5rem; }
-    .subtitle { font-size: 1.5rem; color: #ddd; }
-
-    .container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
-
-    h2.section-title {
-      text-align: center;
-      font-size: 2.8rem;
-      margin: 4rem 0 3rem;
-      color: #fff;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-      gap: 2rem;
-      margin-bottom: 5rem;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    }
-    .card:hover {
-      transform: translateY(-20px);
-      box-shadow: 0 25px 50px rgba(255, 0, 0, 0.4);
-    }
-    .card img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-    }
-    .card-body {
-      padding: 1.8rem;
-    }
-    .card h3 {
-      color: var(--primary);
-      font-size: 1.6rem;
-      margin-bottom: 0.8rem;
-    }
-    .price {
-      font-size: 2.4rem;
-      font-weight: bold;
-      color: #ffd700;
-      margin: 1rem 0;
-    }
-    .btn {
-      display: inline-block;
-      background: linear-gradient(45deg, #ff0000, #ff4444);
-      color: white;
-      padding: 14px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 1rem;
-      transition: all 0.3s;
-      text-align: center;
-      width: 100%;
-    }
-    .btn:hover {
-      transform: scale(1.08);
-      background: linear-gradient(45deg, #ff4444, #ff7777);
-    }
-
-    .contact-bar {
-      background: #111;
-      padding: 3rem 5%;
-      text-align: center;
-      margin: 4rem 0;
-    }
-    .contact-bar a {
-      color: #00ff88;
-      font-size: 1.4rem;
-      margin: 0 20px;
-      text-decoration: none;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card:hover { transform: translateY(-12px) scale(1.03); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4); }
+    .duration-btn { transition: all 0.3s; }
+    .duration-btn.active { background-color: #22c55e; color: white; transform: scale(1.1); }
+    .price { transition: all 0.5s; }
   </style>
 </head>
-<body>
+<body class="bg-zinc-950 text-white min-h-screen">
 
-  <header>
-    <div class="logo">💎 Olubunmi0x Premium</div>
-    <div>Instant Delivery • Trusted Service</div>
-  </header>
-
-  <section class="hero">
-    <h1>Premium Subscriptions</h1>
-    <p class="subtitle">YouTube • AI • VPN • Telegram • X Premium • More</p>
-  </section>
-
-  <div class="container">
-
-    <!-- YouTube Premium -->
-    <h2 class="section-title">YouTube Premium</h2>
-    <div class="services-grid">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/grok_image_x81l7g4.jpg" alt="YouTube Premium">
-        <div class="card-body">
-          <h3>Single Plan</h3>
-          <div class="price">$0.5 <small>/1 Month</small></div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20YouTube%20Premium%20Single%20Plan%20(1%20Month)%20for%20%240.5" class="btn">Order Single — $0.5</a>
-        </div>
+  <!-- Navbar -->
+  <nav class="bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-green-500">PREMIUM<span class="text-white">SU</span></div>
+      <div class="flex gap-8 text-sm font-medium">
+        <a href="#" class="hover:text-green-400 transition">Home</a>
+        <a href="#" class="hover:text-green-400 transition">Features</a>
+        <a href="#" class="hover:text-green-400 transition">Pricing</a>
+        <a href="#" class="hover:text-green-400 transition">FAQ</a>
+        <a href="#" class="hover:text-green-400 transition">Contact</a>
       </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/grok_image_x81l7g4.jpg" alt="YouTube Family">
-        <div class="card-body">
-          <h3>Family Plan</h3>
-          <div class="price">$1.5 <small>/1 Month</small></div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20YouTube%20Premium%20Family%20Plan%20(1%20Month)%20for%20%241.5" class="btn">Order Family — $1.5</a>
-        </div>
+      <button onclick="window.location.reload()" 
+              class="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full font-semibold transition">
+        Get Started
+      </button>
+    </div>
+  </nav>
+
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <h1 class="text-5xl font-bold text-center mb-4">Choose Your Premium Experience</h1>
+    <p class="text-center text-zinc-400 mb-12 text-xl">Unlock exclusive content, early access &amp; more</p>
+
+    <!-- Duration Selector -->
+    <div class="flex justify-center mb-12">
+      <div class="bg-zinc-900 p-2 rounded-2xl flex gap-2 shadow-xl">
+        <button onclick="selectDuration(1)" class="duration-btn active px-8 py-3 rounded-xl text-sm font-semibold" id="btn1">1 Month</button>
+        <button onclick="selectDuration(3)" class="duration-btn px-8 py-3 rounded-xl text-sm font-semibold" id="btn3">3 Months</button>
+        <button onclick="selectDuration(6)" class="duration-btn px-8 py-3 rounded-xl text-sm font-semibold" id="btn6">6 Months</button>
+        <button onclick="selectDuration(12)" class="duration-btn px-8 py-3 rounded-xl text-sm font-semibold" id="btn12">12 Months</button>
       </div>
     </div>
 
-    <!-- CapCut & Canva -->
-    <h2 class="section-title">CapCut Pro & Canva Pro</h2>
-    <div class="services-grid">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-3.jpg" alt="CapCut & Canva">
-        <div class="card-body">
-          <h3>CapCut Premium</h3>
-          <div class="price">$7 <small>/1 Month</small></div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20CapCut%20Premium%20(1%20Month)%20for%20%247" class="btn">Order CapCut Pro</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-3.jpg" alt="Canva Pro">
-        <div class="card-body">
-          <h3>Canva Pro</h3>
-          <div class="price">$2 <small>/1 Year</small></div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Canva%20Pro%20(1%20Year)%20for%20%242" class="btn">Order Canva Pro</a>
-        </div>
-      </div>
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-4 gap-8" id="pricing-cards">
+      <!-- Cards will be populated by JS -->
     </div>
-
-    <!-- Telegram -->
-    <h2 class="section-title">Telegram Premium</h2>
-    <div class="services-grid">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-2.jpg" alt="Telegram">
-        <div class="card-body">
-          <h3>3 Months</h3>
-          <div class="price">$14</div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Telegram%20Premium%203%20Months%20for%20%2414" class="btn">Order 3 Months</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-2.jpg" alt="Telegram">
-        <div class="card-body">
-          <h3>6 Months</h3>
-          <div class="price">$18</div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Telegram%20Premium%206%20Months%20for%20%2418" class="btn">Order 6 Months</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-2.jpg" alt="Telegram">
-        <div class="card-body">
-          <h3>12 Months</h3>
-          <div class="price">$33</div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Telegram%20Premium%2012%20Months%20for%20%2433" class="btn">Order 12 Months</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- VPN -->
-    <h2 class="section-title">VPN Services</h2>
-    <div class="services-grid">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-1.jpg" alt="VPN Services">
-        <div class="card-body">
-          <h3>All VPN Plans</h3>
-          <div class="price">From $0.50</div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20a%20VPN%20service" class="btn">Order VPN</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- AI Services -->
-    <h2 class="section-title">Premium AI Services</h2>
-    <div class="services-grid">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image.jpg" alt="AI Services">
-        <div class="card-body">
-          <h3>ChatGPT Plus • Gemini • Grok</h3>
-          <div class="price">From $8</div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20AI%20service" class="btn">Order AI Service</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- X Premium -->
-    <h2 class="section-title">X (Twitter) Premium</h2>
-    <div class="services-grid">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/1000034424%20(1).jpg" alt="X Premium">
-        <div class="card-body">
-          <h3>X Premium Normal</h3>
-          <div class="price">From $7</div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20X%20Premium%20Normal" class="btn">Order Normal</a>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/1000034424%20(1).jpg" alt="X Premium Plus">
-        <div class="card-body">
-          <h3>X Premium Plus</h3>
-          <div class="price">From $15</div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20X%20Premium%20Plus" class="btn">Order Premium Plus</a>
-        </div>
-      </div>
-    </div>
-
   </div>
 
-  <div class="contact-bar">
-    <h2>Contact Us Instantly</h2>
-    <p>
-      <a href="https://t.me/olubunmi0x" target="_blank"><i class="fab fa-telegram-plane"></i> @olubunmi0x</a>
-      <a href="https://wa.me/2349131559229" target="_blank"><i class="fab fa-whatsapp"></i> +234 913 155 9229</a>
-    </p>
-    <p style="margin-top:1.5rem;">
-      <strong>Website:</strong> 
-      <a href="https://github.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS" target="_blank">github.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS</a>
-    </p>
-  </div>
+  <script>
+    const plans = [
+      { name: "Basic", price1: 2500, price3: 7000, price6: 12000, price12: 20000, color: "zinc" },
+      { name: "Standard", price1: 5000, price3: 13500, price6: 25000, price12: 45000, color: "emerald" },
+      { name: "Premium", price1: 8000, price3: 22000, price6: 40000, price12: 70000, color: "violet" },
+      { name: "VIP", price1: 15000, price3: 40000, price6: 75000, price12: 130000, color: "amber" }
+    ];
 
+    let currentDuration = 1;
+
+    function selectDuration(months) {
+      currentDuration = months;
+      document.querySelectorAll('.duration-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(`btn${months}`).classList.add('active');
+      renderCards();
+    }
+
+    function renderCards() {
+      const container = document.getElementById('pricing-cards');
+      container.innerHTML = '';
+
+      plans.forEach(plan => {
+        let price = plan[`price${currentDuration}`];
+        const card = `
+          <div class="card bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-green-500 group">
+            <h3 class="text-2xl font-bold mb-2">${plan.name}</h3>
+            <div class="price text-5xl font-bold text-green-400 mb-8" id="price-${plan.name}">
+              ₦${price.toLocaleString()}
+            </div>
+            <ul class="space-y-4 mb-10 text-sm">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Full access to content</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Priority support</li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> Exclusive community</li>
+              ${plan.name === "VIP" ? `<li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-500"></i> 1-on-1 mentorship</li>` : ''}
+            </ul>
+            <button onclick="selectPlan('${plan.name}', ${price})"
+                    class="w-full bg-white text-black font-semibold py-4 rounded-2xl hover:bg-green-500 hover:text-white transition-all duration-300">
+              Choose ${plan.name}
+            </button>
+            <p class="text-center text-xs text-zinc-500 mt-4">Billed every ${currentDuration} month${currentDuration > 1 ? 's' : ''}</p>
+          </div>
+        `;
+        container.innerHTML += card;
+      });
+    }
+
+    function selectPlan(name, price) {
+      alert(`✅ You selected ${name} plan for ₦${price.toLocaleString()} (${currentDuration} month${currentDuration > 1 ? 's' : ''})`);
+      // Here you can later connect to payment (Flutterwave, Paystack, etc.)
+    }
+
+    // Initial render
+    renderCards();
+  </script>
 </body>
 </html>
