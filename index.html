@@ -3,246 +3,269 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Premium Subscriptions • Olubunmi0x</title>
+  <title>Olubunmi0x Premium • Subscriptions</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
   <style>
     :root {
-      --primary: #ff0000;
-      --accent: #00ff88;
-      --dark: #0a0a0a;
-      --card: #1a1a1a;
+      --primary: #ff0033;
+      --accent: #00ff9d;
+      --bg: #0a0a0a;
+      --card: #121212;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%);
+      background: linear-gradient(135deg, #0a0a0a, #1a0033);
       color: #fff;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     header {
       background: rgba(10,10,10,0.95);
-      padding: 1.2rem 5%;
+      backdrop-filter: blur(10px);
+      padding: 1.5rem 5%;
       position: sticky;
       top: 0;
       z-index: 100;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 3px solid var(--primary);
+      border-bottom: 2px solid var(--primary);
     }
-    .logo { font-size: 2.3rem; font-weight: bold; color: var(--primary); }
+    .logo { font-size: 2.4rem; font-weight: 800; color: var(--primary); letter-spacing: -2px; }
 
     .hero {
       text-align: center;
-      padding: 8rem 5% 5rem;
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)), url('https://picsum.photos/id/1015/2000/800') center/cover;
-      animation: fadeIn 1.5s ease;
+      padding: 9rem 5% 6rem;
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://picsum.photos/id/1015/2000/900') center/cover;
     }
-    h1 { font-size: 4rem; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255,0,0,0.5); }
-    .subtitle { font-size: 1.6rem; color: #ddd; }
+    .hero h1 {
+      font-size: 4.2rem;
+      background: linear-gradient(90deg, #ff0033, #00ff9d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
 
-    .container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 5%; }
 
     h2.section-title {
       text-align: center;
-      font-size: 2.8rem;
-      margin: 5rem 0 3rem;
+      font-size: 3rem;
+      margin: 6rem 0 3rem;
       color: #fff;
-      position: relative;
-    }
-    h2.section-title::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: var(--primary);
-      margin: 15px auto;
-      border-radius: 2px;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-      gap: 2.2rem;
+    .category {
       margin-bottom: 5rem;
-    }
-
-    .card {
       background: var(--card);
-      border-radius: 20px;
+      border-radius: 24px;
       overflow: hidden;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 0.8s forwards;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     }
-    .card:hover {
-      transform: translateY(-20px) scale(1.03);
-      box-shadow: 0 25px 50px rgba(255, 0, 0, 0.5);
-    }
-    .card img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .card:hover img { transform: scale(1.08); }
 
-    .card-body {
+    .category-header {
+      padding: 2rem 2.5rem;
+      background: linear-gradient(90deg, #1f1f1f, #2a002a);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.4s;
+    }
+    .category-header:hover { background: linear-gradient(90deg, #2a002a, #3a003a); }
+
+    .plans {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      background: #0f0f0f;
+    }
+    .plans.active { max-height: 1200px; }
+
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      padding: 2.5rem;
+    }
+
+    .plan-card {
+      background: #1a1a1a;
+      border-radius: 18px;
       padding: 1.8rem;
+      transition: all 0.4s;
+      border: 1px solid #333;
     }
-    .card h3 {
-      color: var(--primary);
-      font-size: 1.7rem;
-      margin-bottom: 0.8rem;
+    .plan-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 40px rgba(0, 255, 157, 0.15);
     }
+
     .price {
-      font-size: 2.3rem;
-      font-weight: bold;
+      font-size: 2.8rem;
+      font-weight: 700;
       color: #ffd700;
-      margin: 1rem 0 0.5rem;
+      margin: 1rem 0;
     }
-    .naira {
-      font-size: 1.1rem;
-      color: #aaa;
-      display: block;
-    }
+    .naira { font-size: 1.1rem; color: #aaa; }
 
     .btn {
-      display: block;
       width: 100%;
-      background: linear-gradient(45deg, #ff0000, #ff4444);
-      color: white;
       padding: 16px;
+      background: linear-gradient(45deg, var(--primary), #ff3366);
+      color: white;
+      border: none;
       border-radius: 50px;
-      text-decoration: none;
       font-weight: bold;
-      text-align: center;
-      margin-top: 1.2rem;
-      transition: all 0.3s ease;
       font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 1rem;
     }
     .btn:hover {
-      transform: scale(1.08);
-      background: linear-gradient(45deg, #ff4444, #ff7777);
-      box-shadow: 0 10px 20px rgba(255,0,0,0.4);
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(255,0,51,0.4);
     }
 
     .contact-bar {
-      background: #111;
+      background: rgba(20,20,20,0.9);
       padding: 4rem 5%;
       text-align: center;
-      margin: 4rem 0;
-      border-radius: 20px;
-    }
-    .contact-bar a {
-      color: #00ff88;
-      font-size: 1.5rem;
-      margin: 0 20px;
-      text-decoration: none;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      border-radius: 24px;
+      margin: 6rem auto;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">💎 Olubunmi0x Premium</div>
-    <div>Instant • Trusted • Reliable</div>
+    <div class="logo">💎 Olubunmi0x</div>
+    <div>Premium • Instant • Trusted</div>
   </header>
 
   <section class="hero">
     <h1>Premium Subscriptions</h1>
-    <p class="subtitle">YouTube • AI • VPN • Telegram • X Premium & More</p>
+    <p style="font-size:1.7rem; color:#ddd;">Choose your plan • Instant delivery</p>
   </section>
 
   <div class="container">
 
     <!-- YouTube -->
-    <h2 class="section-title">YouTube Premium</h2>
-    <div class="services-grid">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/grok_image_x81l7g4.jpg" alt="YouTube">
-        <div class="card-body">
-          <h3>Single Plan</h3>
-          <div class="price">$0.5 <span class="naira">≈ ₦700</span></div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20YouTube%20Premium%20Single%20Plan%20(1%20Month)%20for%20%240.5%20(₦700)" class="btn">Order Single — $0.5</a>
-        </div>
+    <div class="category">
+      <div class="category-header" onclick="togglePlan(this)">
+        <h2>YouTube Premium</h2>
+        <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/grok_image_x81l7g4.jpg" alt="YouTube Family">
-        <div class="card-body">
-          <h3>Family Plan</h3>
-          <div class="price">$1.5 <span class="naira">≈ ₦2,100</span></div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20YouTube%20Premium%20Family%20Plan%20(1%20Month)%20for%20%241.5%20(₦2100)" class="btn">Order Family — $1.5</a>
+      <div class="plans">
+        <div class="plan-grid">
+          <div class="plan-card">
+            <h3>Single Plan</h3>
+            <div class="price">$0.5 <span class="naira">≈ ₦700</span></div>
+            <p>1 Month • Use your own Gmail</p>
+            <button class="btn" onclick="orderWhatsApp('YouTube Single Plan 1 Month', '0.5')">Order Single</button>
+          </div>
+          <div class="plan-card">
+            <h3>Family Plan</h3>
+            <div class="price">$1.5 <span class="naira">≈ ₦2,100</span></div>
+            <p>1 Month • Up to 5 Members</p>
+            <button class="btn" onclick="orderWhatsApp('YouTube Family Plan 1 Month', '1.5')">Order Family</button>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- CapCut & Canva -->
-    <h2 class="section-title">CapCut Pro & Canva Pro</h2>
-    <div class="services-grid">
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-3.jpg" alt="CapCut">
-        <div class="card-body">
-          <h3>CapCut Premium</h3>
-          <div class="price">$7 <span class="naira">≈ ₦9,800</span></div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20CapCut%20Premium%20(1%20Month)%20for%20%247%20(₦9800)" class="btn">Order CapCut Pro</a>
-        </div>
+    <div class="category">
+      <div class="category-header" onclick="togglePlan(this)">
+        <h2>CapCut Pro & Canva Pro</h2>
+        <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="card">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-3.jpg" alt="Canva">
-        <div class="card-body">
-          <h3>Canva Pro</h3>
-          <div class="price">$2 <span class="naira">≈ ₦2,800</span></div>
-          <a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Canva%20Pro%20(1%20Year)%20for%20%242%20(₦2800)" class="btn">Order Canva Pro</a>
+      <div class="plans">
+        <div class="plan-grid">
+          <div class="plan-card">
+            <h3>CapCut Premium</h3>
+            <div class="price">$7 <span class="naira">≈ ₦9,800</span></div>
+            <p>1 Month • All Pro Features</p>
+            <button class="btn" onclick="orderWhatsApp('CapCut Premium 1 Month', '7')">Order CapCut</button>
+          </div>
+          <div class="plan-card">
+            <h3>Canva Pro</h3>
+            <div class="price">$2 <span class="naira">≈ ₦2,800</span></div>
+            <p>1 Year • Unlimited Design</p>
+            <button class="btn" onclick="orderWhatsApp('Canva Pro 1 Year', '2')">Order Canva Pro</button>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Telegram, VPN, AI, X Premium sections remain similar — you can add more cards easily -->
 
     <!-- Telegram -->
-    <h2 class="section-title">Telegram Premium</h2>
-    <div class="services-grid">
-      <div class="card"><div class="card-body"><h3>3 Months</h3><div class="price">$14 <span class="naira">≈ ₦19,600</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Telegram%20Premium%203%20Months" class="btn">Order 3 Months</a></div></div>
-      <div class="card"><div class="card-body"><h3>6 Months</h3><div class="price">$18 <span class="naira">≈ ₦25,200</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Telegram%20Premium%206%20Months" class="btn">Order 6 Months</a></div></div>
-      <div class="card"><div class="card-body"><h3>12 Months</h3><div class="price">$33 <span class="naira">≈ ₦46,200</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20Telegram%20Premium%2012%20Months" class="btn">Order 12 Months</a></div></div>
+    <div class="category">
+      <div class="category-header" onclick="togglePlan(this)">
+        <h2>Telegram Premium</h2>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="plans">
+        <div class="plan-grid">
+          <div class="plan-card"><h3>3 Months</h3><div class="price">$14 <span class="naira">≈ ₦19,600</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium 3 Months', '14')">Order</button></div>
+          <div class="plan-card"><h3>6 Months</h3><div class="price">$18 <span class="naira">≈ ₦25,200</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium 6 Months', '18')">Order</button></div>
+          <div class="plan-card"><h3>12 Months</h3><div class="price">$33 <span class="naira">≈ ₦46,200</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium 12 Months', '33')">Order</button></div>
+        </div>
+      </div>
     </div>
 
-    <!-- VPN, AI & X Premium sections (short version) -->
-    <h2 class="section-title">VPN • AI • X Premium</h2>
-    <div class="services-grid">
-      <div class="card"><div class="card-body"><h3>VPN Services</h3><div class="price">From $0.50 <span class="naira">≈ ₦700</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20VPN" class="btn">Order VPN</a></div></div>
-      <div class="card"><div class="card-body"><h3>AI Services</h3><div class="price">From $8 <span class="naira">≈ ₦11,200</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20AI%20Service" class="btn">Order AI</a></div></div>
-      <div class="card"><div class="card-body"><h3>X Premium</h3><div class="price">From $7 <span class="naira">≈ ₦9,800</span></div><a href="https://wa.me/2349131559229?text=Hello%2C%20I%20want%20to%20order%20X%20Premium" class="btn">Order X Premium</a></div></div>
+    <!-- X Premium -->
+    <div class="category">
+      <div class="category-header" onclick="togglePlan(this)">
+        <h2>X (Twitter) Premium</h2>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="plans">
+        <div class="plan-grid">
+          <div class="plan-card"><h3>Normal • 3 Months</h3><div class="price">$7 <span class="naira">≈ ₦9,800</span></div><button class="btn" onclick="orderWhatsApp('X Premium Normal 3 Months', '7')">Order Normal</button></div>
+          <div class="plan-card"><h3>Premium Plus • 3 Months</h3><div class="price">$15 <span class="naira">≈ ₦21,000</span></div><button class="btn" onclick="orderWhatsApp('X Premium Plus 3 Months', '15')">Order Premium Plus</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VPN & AI combined for brevity -->
+    <div class="category">
+      <div class="category-header" onclick="togglePlan(this)">
+        <h2>VPN & AI Services</h2>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="plans">
+        <div class="plan-grid">
+          <div class="plan-card"><h3>VPN Services</h3><div class="price">From $0.50</div><button class="btn" onclick="orderWhatsApp('VPN Service', '0.5')">Order VPN</button></div>
+          <div class="plan-card"><h3>AI Services</h3><div class="price">From $8</div><button class="btn" onclick="orderWhatsApp('AI Service', '8')">Order AI</button></div>
+        </div>
+      </div>
     </div>
 
   </div>
 
   <div class="contact-bar">
-    <h2>Contact Us Instantly</h2>
-    <p>
-      <a href="https://t.me/olubunmi0x" target="_blank"><i class="fab fa-telegram-plane"></i> @olubunmi0x</a>
+    <h2>Ready to Order?</h2>
+    <p style="font-size:1.4rem; margin:1.5rem 0;">
+      <a href="https://t.me/olubunmi0x" target="_blank"><i class="fab fa-telegram"></i> @olubunmi0x</a> • 
       <a href="https://wa.me/2349131559229" target="_blank"><i class="fab fa-whatsapp"></i> +234 913 155 9229</a>
-    </p>
-    <p style="margin-top:2rem;">
-      <strong>Website:</strong> 
-      <a href="https://github.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS" target="_blank">github.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS</a>
     </p>
   </div>
 
+  <script>
+    function togglePlan(header) {
+      const plans = header.nextElementSibling;
+      plans.classList.toggle('active');
+      const icon = header.querySelector('i');
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
+    }
+
+    function orderWhatsApp(planName, price) {
+      const text = `Hello, I want to order ${planName} for $${price}`;
+      window.open(`https://wa.me/2349131559229?text=${encodeURIComponent(text)}`, '_blank');
+    }
+  </script>
 </body>
 </html>
