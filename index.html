@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Olubunmi0x Premium Subscriptions</title>
+  <title>Olubunmi0x Premium • Elite Subscriptions</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
   <style>
     :root {
@@ -15,43 +15,37 @@
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
       background: linear-gradient(135deg, #0a0a0a, #1a0033);
-      color: #fff;
-      line-height: 1.75;
+      color: #f0f0f0;
+      line-height: 1.85;
     }
 
     nav {
       background: rgba(10,10,10,0.95);
-      padding: 1rem 5%;
+      padding: 1.6rem 6%;
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     nav ul {
       display: flex;
-      gap: 2.2rem;
+      gap: 3rem;
       list-style: none;
       justify-content: center;
       flex-wrap: wrap;
     }
-    nav a { color: #ddd; text-decoration: none; font-weight: 600; }
+    nav a { color: #ddd; text-decoration: none; font-weight: 600; font-size: 1.1rem; }
     nav a:hover { color: var(--blue-neon); }
 
     /* Hero Carousel */
     .hero {
       position: relative;
-      height: 520px;
+      height: 620px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-    }
-    .carousel {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 1;
     }
     .carousel img {
       position: absolute;
@@ -59,66 +53,70 @@
       width: 100%; height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity 1s ease-in-out;
+      transition: opacity 1.5s ease;
     }
     .carousel img.active { opacity: 1; }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 800px;
+      max-width: 820px;
       padding: 2rem;
     }
     .hero h1 {
-      font-size: 4.2rem;
+      font-size: 4.5rem;
       background: linear-gradient(90deg, #ff0033, #00ff9d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
-    /* Get Verified Animation */
+    /* Animated Get Verified Badge */
     .verify-badge {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      background: rgba(0, 180, 255, 0.15);
-      padding: 12px 28px;
-      border-radius: 50px;
+      gap: 14px;
+      background: rgba(0, 180, 255, 0.12);
+      padding: 14px 32px;
+      border-radius: 60px;
       border: 2px solid var(--blue-neon);
-      margin-top: 1.5rem;
-      animation: pulse 2s infinite;
+      margin-top: 2rem;
+      animation: pulse 2.5s infinite ease-in-out;
     }
     .verify-badge i {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: var(--blue-neon);
-      animation: checkPop 1.5s infinite;
+      animation: checkPop 2s infinite;
     }
     @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(0,180,255,0.4); }
-      70% { box-shadow: 0 0 0 20px rgba(0,180,255,0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0,180,255,0.35); }
+      70% { box-shadow: 0 0 0 25px rgba(0,180,255,0); }
     }
     @keyframes checkPop {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.2); }
+      50% { transform: scale(1.15); }
     }
 
-    .container { max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 6%;
+    }
 
     .category {
-      margin: 5rem 0;
+      margin: 6rem 0;
       background: #121212;
-      border-radius: 24px;
+      border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
 
     .category-header {
-      height: 380px;
+      height: 420px;
       position: relative;
       display: flex;
       align-items: flex-end;
-      padding: 0 2.5rem 2rem;
+      padding: 0 3rem 2.5rem;
     }
     .category-header img {
       width: 100%;
@@ -126,72 +124,86 @@
       object-fit: cover;
       position: absolute;
       top: 0; left: 0;
-      filter: brightness(0.6);
+      filter: brightness(0.55);
     }
     .category-header h2 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       position: relative;
       z-index: 2;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.9);
+      text-shadow: 0 4px 20px rgba(0,0,0,0.9);
     }
 
     .plans {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.6s ease;
+      transition: max-height 0.7s ease;
       background: #0f0f0f;
     }
-    .plans.active { max-height: 5000px; }
+    .plans.active { max-height: 6000px; }
 
     .plan-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 2rem;
-      padding: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2.5rem;
+      padding: 3.5rem;
     }
 
     .plan-card {
       background: #1a1a1a;
-      border-radius: 18px;
-      padding: 2.2rem;
-      transition: all 0.4s;
-      border: 1px solid #333;
+      border-radius: 22px;
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+      border: 1px solid #2a2a2a;
     }
     .plan-card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 40px rgba(0, 255, 157, 0.2);
+      transform: translateY(-15px);
+      border-color: var(--blue-neon);
+      box-shadow: 0 25px 60px rgba(0, 180, 255, 0.15);
     }
 
     .price {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       font-weight: 700;
       color: #ffd700;
-      margin: 1rem 0 0.5rem;
+      margin: 1.2rem 0 0.6rem;
     }
-    .naira { font-size: 1.15rem; color: #aaa; }
+    .naira { font-size: 1.2rem; color: #aaa; }
 
+    .features {
+      margin: 1.4rem 0;
+      padding-left: 1.4rem;
+    }
     .features li {
-      margin-bottom: 0.45rem;
+      margin-bottom: 0.55rem;
+      font-size: 1.05rem;
     }
 
-    /* Blue Neon Buttons */
+    /* Blue Neon Buttons - All Consistent */
     .btn {
       width: 100%;
-      padding: 16px;
+      padding: 18px;
       background: linear-gradient(45deg, #00b4ff, #0066ff);
       color: white;
       border: none;
       border-radius: 50px;
-      font-weight: bold;
-      font-size: 1.1rem;
+      font-weight: 700;
+      font-size: 1.15rem;
       cursor: pointer;
-      margin-top: 1rem;
-      transition: all 0.3s;
-      box-shadow: 0 0 15px rgba(0, 180, 255, 0.5);
+      margin-top: 1.2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(0, 180, 255, 0.5);
     }
     .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(0, 180, 255, 0.8);
+      transform: scale(1.04);
+      box-shadow: 0 0 30px rgba(0, 180, 255, 0.8);
+    }
+
+    .contact {
+      text-align: center;
+      padding: 5rem 6%;
+      background: #111;
+      margin: 6rem 0;
+      border-radius: 28px;
     }
   </style>
 </head>
@@ -209,20 +221,18 @@
     </ul>
   </nav>
 
-  <!-- Hero with Carousel + Get Verified Animation -->
+  <!-- Hero with Carousel -->
   <section class="hero">
-    <div class="carousel" id="heroCarousel">
-      <!-- Your GitHub images will be inserted here by JS -->
-    </div>
-
+    <div class="carousel" id="heroCarousel"></div>
+    
     <div class="hero-content">
       <h1>Premium Subscriptions</h1>
-      <p style="font-size:1.7rem; color:#ddd;">Instant Delivery • Trusted Service</p>
+      <p style="font-size:1.85rem; color:#ddd;">Instant Delivery • Trusted Service</p>
 
-      <!-- Get Verified Animation -->
+      <!-- Animated Get Verified Badge -->
       <div class="verify-badge">
         <i class="fas fa-check-circle"></i>
-        <span style="font-weight:600; font-size:1.3rem;">Get Verified!</span>
+        <span style="font-weight:700; font-size:1.35rem;">Get Verified!</span>
       </div>
     </div>
   </section>
@@ -296,7 +306,7 @@
             <h3>3 Months Plan</h3>
             <div class="price">$14 <span class="naira">≈ ₦19,600</span></div>
             <ul class="features">
-              <li>✅ 4 GB File Uploads</li>
+              <li>✅ 4 GB File Uploads (instead of 2 GB)</li>
               <li>✅ Faster Download Speed</li>
               <li>✅ No Ads Experience</li>
               <li>✅ Voice-to-Text Messages</li>
@@ -351,7 +361,7 @@
         <div class="plan-grid">
           <div class="plan-card">
             <h3>X Premium Normal</h3>
-            <div style="margin:1rem 0;">
+            <div style="margin:1.2rem 0; font-size:1.1rem;">
               <strong>3 Months:</strong> $7 ≈ ₦9,800<br>
               <strong>6 Months:</strong> $11 ≈ ₦15,400
             </div>
@@ -366,12 +376,12 @@
               <li>✔ Monetization features (if eligible)</li>
             </ul>
             <button class="btn" onclick="orderWhatsApp('X Premium Normal (3 Months)', '7')">Order Normal 3 Months — $7</button>
-            <button class="btn" onclick="orderWhatsApp('X Premium Normal (6 Months)', '11')" style="margin-top:0.6rem; background:linear-gradient(45deg,#0066ff,#00b4ff);">Order Normal 6 Months — $11</button>
+            <button class="btn" onclick="orderWhatsApp('X Premium Normal (6 Months)', '11')" style="margin-top:0.8rem; background:linear-gradient(45deg,#0066ff,#00b4ff);">Order Normal 6 Months — $11</button>
           </div>
 
           <div class="plan-card">
             <h3>X Premium Plus</h3>
-            <div style="margin:1rem 0;">
+            <div style="margin:1.2rem 0; font-size:1.1rem;">
               <strong>3 Months:</strong> $15 ≈ ₦21,000<br>
               <strong>6 Months:</strong> $19 ≈ ₦26,600<br>
               <strong>12 Months:</strong> $27 ≈ ₦37,800
@@ -387,17 +397,17 @@
               <li>✔ Monetization features (higher earning potential)</li>
             </ul>
             <button class="btn" onclick="orderWhatsApp('X Premium Plus (3 Months)', '15')">Order Plus 3 Months — $15</button>
-            <button class="btn" onclick="orderWhatsApp('X Premium Plus (6 Months)', '19')" style="margin-top:0.6rem; background:linear-gradient(45deg,#0066ff,#00b4ff);">Order Plus 6 Months — $19</button>
-            <button class="btn" onclick="orderWhatsApp('X Premium Plus (12 Months)', '27')" style="margin-top:0.6rem; background:linear-gradient(45deg,#0066ff,#00b4ff);">Order Plus 12 Months — $27</button>
+            <button class="btn" onclick="orderWhatsApp('X Premium Plus (6 Months)', '19')" style="margin-top:0.8rem; background:linear-gradient(45deg,#0066ff,#00b4ff);">Order Plus 6 Months — $19</button>
+            <button class="btn" onclick="orderWhatsApp('X Premium Plus (12 Months)', '27')" style="margin-top:0.8rem; background:linear-gradient(45deg,#0066ff,#00b4ff);">Order Plus 12 Months — $27</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- VPN & AI -->
+    <!-- VPN -->
     <div id="vpn" class="category">
       <div class="category-header">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-1.jpg" alt="VPN">
+        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-1.jpg" alt="VPN Services">
         <h2>VPN Services</h2>
       </div>
       <div class="plans active">
@@ -409,6 +419,7 @@
       </div>
     </div>
 
+    <!-- AI Services -->
     <div id="ai" class="category">
       <div class="category-header">
         <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image.jpg" alt="AI Services">
@@ -427,28 +438,30 @@
 
   </div>
 
-  <div class="contact" style="text-align:center; padding:4rem 5%; background:#111; margin:5rem 0; border-radius:24px;">
+  <!-- Contact -->
+  <div class="contact">
     <h2>Ready to Order?</h2>
-    <p style="font-size:1.5rem; margin:1.5rem 0;">
-      <a href="https://t.me/olubunmi0x" target="_blank"><i class="fab fa-telegram"></i> @olubunmi0x</a> &nbsp;&nbsp;
+    <p style="font-size:1.6rem; margin:2rem 0;">
+      <a href="https://t.me/olubunmi0x" target="_blank"><i class="fab fa-telegram"></i> @olubunmi0x</a> &nbsp;&nbsp;|&nbsp;&nbsp;
       <a href="https://wa.me/2349131559229" target="_blank"><i class="fab fa-whatsapp"></i> +234 913 155 9229</a>
     </p>
   </div>
 
   <script>
-    // Hero Carousel with your GitHub images
+    // Hero Carousel with your images
     const carouselImages = [
-      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/grok_image_x81l7g4.jpg", // YouTube
-      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-3.jpg",     // CapCut/Canva
-      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-2.jpg",     // Telegram
-      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-1.jpg",     // VPN
-      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image.jpg",       // AI
-      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/1000034424%20(1).jpg" // X
+      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/grok_image_x81l7g4.jpg",
+      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-3.jpg",
+      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-2.jpg",
+      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-1.jpg",
+      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image.jpg",
+      "https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/1000034424%20(1).jpg"
     ];
 
     function initCarousel() {
-      const carousel = document.getElementById('heroCarousel');
-      carousel.innerHTML = '';
+      const carousel = document.createElement('div');
+      carousel.className = 'carousel';
+      document.querySelector('.hero').prepend(carousel);
 
       carouselImages.forEach((src, index) => {
         const img = document.createElement('img');
@@ -471,7 +484,6 @@
       window.open(`https://wa.me/2349131559229?text=${encodeURIComponent(message)}`, '_blank');
     }
 
-    // Initialize everything
     window.onload = function() {
       initCarousel();
     }
