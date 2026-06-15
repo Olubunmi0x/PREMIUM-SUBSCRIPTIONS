@@ -15,7 +15,7 @@
       font-family: 'Segoe UI', system-ui, sans-serif;
       background: linear-gradient(135deg, #0a0a0a, #1a0033);
       color: #fff;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     nav {
@@ -88,11 +88,11 @@
       transition: max-height 0.6s ease;
       background: #0f0f0f;
     }
-    .plans.active { max-height: 4000px; }
+    .plans.active { max-height: 4500px; }
 
     .plan-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
       gap: 2rem;
       padding: 3rem;
     }
@@ -100,7 +100,7 @@
     .plan-card {
       background: #1a1a1a;
       border-radius: 18px;
-      padding: 2rem;
+      padding: 2.2rem;
       transition: all 0.4s;
       border: 1px solid #333;
     }
@@ -122,7 +122,7 @@
       padding-left: 1.2rem;
     }
     .features li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
     }
 
     .btn {
@@ -164,7 +164,7 @@
 
   <div class="container">
 
-    <!-- YouTube Premium -->
+    <!-- ==================== YOUTUBE PREMIUM ==================== -->
     <div id="youtube" class="category">
       <div class="category-header">
         <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/grok_image_x81l7g4.jpg" alt="YouTube Premium">
@@ -172,7 +172,7 @@
       </div>
       <div class="plans active">
         <div class="plan-grid">
-          <!-- Single Plan -->
+          <!-- Single -->
           <div class="plan-card">
             <h3>Single Plan — 1 Month</h3>
             <div class="price">$0.5 <span class="naira">≈ ₦700</span></div>
@@ -181,10 +181,10 @@
               <li>✅ Only Gmail Needed</li>
               <li>✅ No Password Required</li>
             </ul>
-            <button class="btn" onclick="orderWhatsApp('YouTube Premium Single Plan (1 Month)', '0.5')">Order Single Plan</button>
+            <button class="btn" onclick="orderWhatsApp('YouTube Premium Single Plan (1 Month)', '0.5')">Order Single Plan — $0.5</button>
           </div>
 
-          <!-- Family Plan -->
+          <!-- Family -->
           <div class="plan-card">
             <h3>Family Plan — 1 Month</h3>
             <div class="price">$1.5 <span class="naira">≈ ₦2,100</span></div>
@@ -194,13 +194,13 @@
               <li>✅ Can Add Up To 5 Members</li>
               <li>✅ All Premium Features Included</li>
             </ul>
-            <button class="btn" onclick="orderWhatsApp('YouTube Premium Family Plan (1 Month)', '1.5')">Order Family Plan</button>
+            <button class="btn" onclick="orderWhatsApp('YouTube Premium Family Plan (1 Month)', '1.5')">Order Family Plan — $1.5</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- CapCut & Canva -->
+    <!-- ==================== CAPCUT & CANVA ==================== -->
     <div id="capcut" class="category">
       <div class="category-header">
         <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-3.jpg" alt="CapCut & Canva">
@@ -211,18 +211,18 @@
           <div class="plan-card">
             <h3>CapCut Premium — 1 Month</h3>
             <div class="price">$7 <span class="naira">≈ ₦9,800</span></div>
-            <button class="btn" onclick="orderWhatsApp('CapCut Premium (1 Month)', '7')">Order CapCut Pro</button>
+            <button class="btn" onclick="orderWhatsApp('CapCut Premium (1 Month)', '7')">Order CapCut Pro — $7</button>
           </div>
           <div class="plan-card">
             <h3>Canva Pro — 1 Year</h3>
             <div class="price">$2 <span class="naira">≈ ₦2,800</span></div>
-            <button class="btn" onclick="orderWhatsApp('Canva Pro (1 Year)', '2')">Order Canva Pro</button>
+            <button class="btn" onclick="orderWhatsApp('Canva Pro (1 Year)', '2')">Order Canva Pro — $2</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Telegram Premium -->
+    <!-- ==================== TELEGRAM PREMIUM ==================== -->
     <div id="telegram" class="category">
       <div class="category-header">
         <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-2.jpg" alt="Telegram Premium">
@@ -230,37 +230,61 @@
       </div>
       <div class="plans active">
         <div class="plan-grid">
+          <!-- 3 Months -->
           <div class="plan-card">
-            <h3>Telegram Premium Plans</h3>
-            <div style="margin:1rem 0;">
-              <strong>3 Months:</strong> $14 ≈ ₦19,600<br>
-              <strong>6 Months:</strong> $18 ≈ ₦25,200<br>
-              <strong>12 Months:</strong> $33 ≈ ₦46,200
-            </div>
+            <h3>3 Months Plan</h3>
+            <div class="price">$14 <span class="naira">≈ ₦19,600</span></div>
             <ul class="features">
               <li>✅ 4 GB File Uploads (instead of 2 GB)</li>
               <li>✅ Faster Download Speed</li>
               <li>✅ No Ads Experience</li>
               <li>✅ Voice-to-Text Messages</li>
               <li>✅ Premium Stickers & Reactions</li>
-              <li>✅ Animated Profile Pictures</li>
-              <li>✅ Premium App Icons</li>
-              <li>✅ Custom Emojis</li>
-              <li>✅ More Chat Folders</li>
-              <li>✅ Double Limits (Channels, Groups, Links, Pins)</li>
-              <li>✅ Advanced Chat Management</li>
-              <li>✅ Better Privacy & Control</li>
-              <li>✅ Faster & Smoother Experience</li>
+              <li>✅ Animated Profile Pictures & Custom Emojis</li>
+              <li>✅ Double Limits & Advanced Chat Management</li>
               <li>✅ Exclusive Premium Badge ⭐</li>
-              <li>✅ Priority Features & Updates</li>
             </ul>
-            <button class="btn" onclick="orderWhatsApp('Telegram Premium', '14')">Order Telegram Premium</button>
+            <button class="btn" onclick="orderWhatsApp('Telegram Premium (3 Months)', '14')">Order 3 Months — $14</button>
+          </div>
+
+          <!-- 6 Months -->
+          <div class="plan-card">
+            <h3>6 Months Plan</h3>
+            <div class="price">$18 <span class="naira">≈ ₦25,200</span></div>
+            <ul class="features">
+              <li>✅ 4 GB File Uploads (instead of 2 GB)</li>
+              <li>✅ Faster Download Speed</li>
+              <li>✅ No Ads Experience</li>
+              <li>✅ Voice-to-Text Messages</li>
+              <li>✅ Premium Stickers & Reactions</li>
+              <li>✅ Animated Profile Pictures & Custom Emojis</li>
+              <li>✅ Double Limits & Advanced Chat Management</li>
+              <li>✅ Exclusive Premium Badge ⭐</li>
+            </ul>
+            <button class="btn" onclick="orderWhatsApp('Telegram Premium (6 Months)', '18')">Order 6 Months — $18</button>
+          </div>
+
+          <!-- 12 Months -->
+          <div class="plan-card">
+            <h3>12 Months Plan</h3>
+            <div class="price">$33 <span class="naira">≈ ₦46,200</span></div>
+            <ul class="features">
+              <li>✅ 4 GB File Uploads (instead of 2 GB)</li>
+              <li>✅ Faster Download Speed</li>
+              <li>✅ No Ads Experience</li>
+              <li>✅ Voice-to-Text Messages</li>
+              <li>✅ Premium Stickers & Reactions</li>
+              <li>✅ Animated Profile Pictures & Custom Emojis</li>
+              <li>✅ Double Limits & Advanced Chat Management</li>
+              <li>✅ Exclusive Premium Badge ⭐</li>
+            </ul>
+            <button class="btn" onclick="orderWhatsApp('Telegram Premium (12 Months)', '33')">Order 12 Months — $33</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- X Premium -->
+    <!-- ==================== X PREMIUM ==================== -->
     <div id="xpremium" class="category">
       <div class="category-header">
         <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/1000034424%20(1).jpg" alt="X Premium">
@@ -268,7 +292,7 @@
       </div>
       <div class="plans active">
         <div class="plan-grid">
-          <!-- X Normal -->
+          <!-- Normal -->
           <div class="plan-card">
             <h3>X Premium Normal</h3>
             <div style="margin:1rem 0;">
@@ -285,10 +309,11 @@
               <li>✔ Basic AI (Grok access)</li>
               <li>✔ Monetization features (if eligible)</li>
             </ul>
-            <button class="btn" onclick="orderWhatsApp('X Premium Normal', '7')">Order X Normal</button>
+            <button class="btn" onclick="orderWhatsApp('X Premium Normal (3 Months)', '7')">Order Normal 3 Months — $7</button>
+            <button class="btn" onclick="orderWhatsApp('X Premium Normal (6 Months)', '11')" style="margin-top:0.6rem; background:linear-gradient(45deg,#444,#666);">Order Normal 6 Months — $11</button>
           </div>
 
-          <!-- X Plus -->
+          <!-- Plus -->
           <div class="plan-card">
             <h3>X Premium Plus</h3>
             <div style="margin:1rem 0;">
@@ -306,30 +331,29 @@
               <li>✔ Advanced AI (Grok with higher limits)</li>
               <li>✔ Monetization features (higher earning potential)</li>
             </ul>
-            <button class="btn" onclick="orderWhatsApp('X Premium Plus', '15')">Order X Premium Plus</button>
+            <button class="btn" onclick="orderWhatsApp('X Premium Plus (3 Months)', '15')">Order Plus 3 Months — $15</button>
+            <button class="btn" onclick="orderWhatsApp('X Premium Plus (6 Months)', '19')" style="margin-top:0.6rem; background:linear-gradient(45deg,#444,#666);">Order Plus 6 Months — $19</button>
+            <button class="btn" onclick="orderWhatsApp('X Premium Plus (12 Months)', '27')" style="margin-top:0.6rem; background:linear-gradient(45deg,#444,#666);">Order Plus 12 Months — $27</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- VPN Services -->
+    <!-- ==================== VPN & AI (kept compact) ==================== -->
     <div id="vpn" class="category">
       <div class="category-header">
-        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-1.jpg" alt="VPN Services">
+        <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image-1.jpg" alt="VPN">
         <h2>VPN Services</h2>
       </div>
       <div class="plans active">
         <div class="plan-grid">
-          <div class="plan-card"><h3>NordVPN - 7 Days</h3><div class="price">$0.80 <span class="naira">≈ ₦1,100</span></div><button class="btn" onclick="orderWhatsApp('NordVPN 7 Days', '0.8')">Order</button></div>
-          <div class="plan-card"><h3>IPVanish - 7 Days</h3><div class="price">$0.50 <span class="naira">≈ ₦700</span></div><button class="btn" onclick="orderWhatsApp('IPVanish 7 Days', '0.5')">Order</button></div>
-          <div class="plan-card"><h3>ExpressVPN - 7 Days</h3><div class="price">$0.50 <span class="naira">≈ ₦700</span></div><button class="btn" onclick="orderWhatsApp('ExpressVPN 7 Days', '0.5')">Order</button></div>
-          <div class="plan-card"><h3>HMA VPN - 7 Days</h3><div class="price">$0.50 <span class="naira">≈ ₦700</span></div><button class="btn" onclick="orderWhatsApp('HMA VPN 7 Days', '0.5')">Order</button></div>
-          <div class="plan-card"><h3>Proton VPN - 14 Days</h3><div class="price">$1.00 <span class="naira">≈ ₦1,400</span></div><button class="btn" onclick="orderWhatsApp('Proton VPN 14 Days', '1')">Order</button></div>
+          <div class="plan-card"><h3>NordVPN — 7 Days</h3><div class="price">$0.80 <span class="naira">≈ ₦1,100</span></div><button class="btn" onclick="orderWhatsApp('NordVPN 7 Days', '0.8')">Order — $0.80</button></div>
+          <div class="plan-card"><h3>IPVanish / ExpressVPN / HMA — 7 Days</h3><div class="price">$0.50 <span class="naira">≈ ₦700</span></div><button class="btn" onclick="orderWhatsApp('VPN 7 Days', '0.5')">Order — $0.50</button></div>
+          <div class="plan-card"><h3>Proton VPN — 14 Days</h3><div class="price">$1.00 <span class="naira">≈ ₦1,400</span></div><button class="btn" onclick="orderWhatsApp('Proton VPN 14 Days', '1')">Order — $1.00</button></div>
         </div>
       </div>
     </div>
 
-    <!-- AI Services -->
     <div id="ai" class="category">
       <div class="category-header">
         <img src="https://raw.githubusercontent.com/Olubunmi0x/PREMIUM-SUBSCRIPTIONS/refs/heads/main/image.jpg" alt="AI Services">
@@ -337,11 +361,11 @@
       </div>
       <div class="plans active">
         <div class="plan-grid">
-          <div class="plan-card"><h3>ChatGPT Plus — 1 Month</h3><div class="price">$8 <span class="naira">≈ ₦11,200</span></div><button class="btn" onclick="orderWhatsApp('ChatGPT Plus (1 Month)', '8')">Order ChatGPT</button></div>
-          <div class="plan-card"><h3>Gemini Advanced — 1 Year</h3><div class="price">$15 <span class="naira">≈ ₦21,000</span></div><button class="btn" onclick="orderWhatsApp('Gemini Advanced (1 Year)', '15')">Order Gemini</button></div>
-          <div class="plan-card"><h3>Grok AI Plus — 3 Months</h3><div class="price">$15 <span class="naira">≈ ₦21,000</span></div><button class="btn" onclick="orderWhatsApp('Grok AI Plus (3 Months)', '15')">Order 3 Months</button></div>
-          <div class="plan-card"><h3>Grok AI Plus — 6 Months</h3><div class="price">$20 <span class="naira">≈ ₦28,000</span></div><button class="btn" onclick="orderWhatsApp('Grok AI Plus (6 Months)', '20')">Order 6 Months</button></div>
-          <div class="plan-card"><h3>Grok AI Plus — 12 Months</h3><div class="price">$25 <span class="naira">≈ ₦35,000</span></div><button class="btn" onclick="orderWhatsApp('Grok AI Plus (12 Months)', '25')">Order 12 Months</button></div>
+          <div class="plan-card"><h3>ChatGPT Plus — 1 Month</h3><div class="price">$8 <span class="naira">≈ ₦11,200</span></div><button class="btn" onclick="orderWhatsApp('ChatGPT Plus (1 Month)', '8')">Order — $8</button></div>
+          <div class="plan-card"><h3>Gemini Advanced — 1 Year</h3><div class="price">$15 <span class="naira">≈ ₦21,000</span></div><button class="btn" onclick="orderWhatsApp('Gemini Advanced (1 Year)', '15')">Order — $15</button></div>
+          <div class="plan-card"><h3>Grok AI Plus — 3 Months</h3><div class="price">$15 <span class="naira">≈ ₦21,000</span></div><button class="btn" onclick="orderWhatsApp('Grok AI Plus (3 Months)', '15')">Order 3 Months — $15</button></div>
+          <div class="plan-card"><h3>Grok AI Plus — 6 Months</h3><div class="price">$20 <span class="naira">≈ ₦28,000</span></div><button class="btn" onclick="orderWhatsApp('Grok AI Plus (6 Months)', '20')">Order 6 Months — $20</button></div>
+          <div class="plan-card"><h3>Grok AI Plus — 12 Months</h3><div class="price">$25 <span class="naira">≈ ₦35,000</span></div><button class="btn" onclick="orderWhatsApp('Grok AI Plus (12 Months)', '25')">Order 12 Months — $25</button></div>
         </div>
       </div>
     </div>
@@ -365,4 +389,4 @@
   </script>
 
 </body>
-                                                           </html>
+  </html>
