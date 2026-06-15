@@ -58,9 +58,8 @@
       box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     }
 
-    /* === BIGGER IMAGES === */
     .category-header {
-      height: 380px;              /* Increased height for bigger image */
+      height: 380px;
       position: relative;
       display: flex;
       align-items: flex-end;
@@ -74,7 +73,7 @@
       top: 0;
       left: 0;
       z-index: 1;
-      filter: brightness(0.65);
+      filter: brightness(0.6);
     }
     .category-header h2 {
       font-size: 2.8rem;
@@ -89,7 +88,7 @@
       transition: max-height 0.6s ease;
       background: #0f0f0f;
     }
-    .plans.active { max-height: 3200px; }
+    .plans.active { max-height: 4000px; }
 
     .plan-grid {
       display: grid;
@@ -117,6 +116,14 @@
       margin: 1rem 0 0.5rem;
     }
     .naira { font-size: 1.15rem; color: #aaa; }
+
+    .features {
+      margin: 1.2rem 0;
+      padding-left: 1.2rem;
+    }
+    .features li {
+      margin-bottom: 0.4rem;
+    }
 
     .btn {
       width: 100%;
@@ -149,9 +156,10 @@
     </ul>
   </nav>
 
+  <!-- Hero -->
   <section class="hero">
     <h1>Premium Subscriptions</h1>
-    <p style="font-size:1.6rem; color:#ddd;">Instant Delivery • Trusted Service</p>
+    <p style="font-size:1.7rem; color:#ddd;">Instant Delivery • Trusted Service</p>
   </section>
 
   <div class="container">
@@ -164,16 +172,28 @@
       </div>
       <div class="plans active">
         <div class="plan-grid">
+          <!-- Single Plan -->
           <div class="plan-card">
             <h3>Single Plan — 1 Month</h3>
             <div class="price">$0.5 <span class="naira">≈ ₦700</span></div>
-            <p>Use your own Gmail • No password required</p>
+            <ul class="features">
+              <li>✅ Use Your Own Gmail</li>
+              <li>✅ Only Gmail Needed</li>
+              <li>✅ No Password Required</li>
+            </ul>
             <button class="btn" onclick="orderWhatsApp('YouTube Premium Single Plan (1 Month)', '0.5')">Order Single Plan</button>
           </div>
+
+          <!-- Family Plan -->
           <div class="plan-card">
             <h3>Family Plan — 1 Month</h3>
             <div class="price">$1.5 <span class="naira">≈ ₦2,100</span></div>
-            <p>Fresh Gmail + Password • Up to 5 Members</p>
+            <ul class="features">
+              <li>✅ Fresh Gmail Provided</li>
+              <li>✅ Gmail + Password Included</li>
+              <li>✅ Can Add Up To 5 Members</li>
+              <li>✅ All Premium Features Included</li>
+            </ul>
             <button class="btn" onclick="orderWhatsApp('YouTube Premium Family Plan (1 Month)', '1.5')">Order Family Plan</button>
           </div>
         </div>
@@ -210,9 +230,32 @@
       </div>
       <div class="plans active">
         <div class="plan-grid">
-          <div class="plan-card"><h3>3 Months</h3><div class="price">$14 <span class="naira">≈ ₦19,600</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium (3 Months)', '14')">Order 3 Months</button></div>
-          <div class="plan-card"><h3>6 Months</h3><div class="price">$18 <span class="naira">≈ ₦25,200</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium (6 Months)', '18')">Order 6 Months</button></div>
-          <div class="plan-card"><h3>12 Months</h3><div class="price">$33 <span class="naira">≈ ₦46,200</span></div><button class="btn" onclick="orderWhatsApp('Telegram Premium (12 Months)', '33')">Order 12 Months</button></div>
+          <div class="plan-card">
+            <h3>Telegram Premium Plans</h3>
+            <div style="margin:1rem 0;">
+              <strong>3 Months:</strong> $14 ≈ ₦19,600<br>
+              <strong>6 Months:</strong> $18 ≈ ₦25,200<br>
+              <strong>12 Months:</strong> $33 ≈ ₦46,200
+            </div>
+            <ul class="features">
+              <li>✅ 4 GB File Uploads (instead of 2 GB)</li>
+              <li>✅ Faster Download Speed</li>
+              <li>✅ No Ads Experience</li>
+              <li>✅ Voice-to-Text Messages</li>
+              <li>✅ Premium Stickers & Reactions</li>
+              <li>✅ Animated Profile Pictures</li>
+              <li>✅ Premium App Icons</li>
+              <li>✅ Custom Emojis</li>
+              <li>✅ More Chat Folders</li>
+              <li>✅ Double Limits (Channels, Groups, Links, Pins)</li>
+              <li>✅ Advanced Chat Management</li>
+              <li>✅ Better Privacy & Control</li>
+              <li>✅ Faster & Smoother Experience</li>
+              <li>✅ Exclusive Premium Badge ⭐</li>
+              <li>✅ Priority Features & Updates</li>
+            </ul>
+            <button class="btn" onclick="orderWhatsApp('Telegram Premium', '14')">Order Telegram Premium</button>
+          </div>
         </div>
       </div>
     </div>
@@ -225,11 +268,46 @@
       </div>
       <div class="plans active">
         <div class="plan-grid">
-          <div class="plan-card"><h3>Normal - 3 Months</h3><div class="price">$7 <span class="naira">≈ ₦9,800</span></div><button class="btn" onclick="orderWhatsApp('X Premium Normal (3 Months)', '7')">Order Normal</button></div>
-          <div class="plan-card"><h3>Normal - 6 Months</h3><div class="price">$11 <span class="naira">≈ ₦15,400</span></div><button class="btn" onclick="orderWhatsApp('X Premium Normal (6 Months)', '11')">Order Normal</button></div>
-          <div class="plan-card"><h3>Premium Plus - 3 Months</h3><div class="price">$15 <span class="naira">≈ ₦21,000</span></div><button class="btn" onclick="orderWhatsApp('X Premium Plus (3 Months)', '15')">Order Plus</button></div>
-          <div class="plan-card"><h3>Premium Plus - 6 Months</h3><div class="price">$19 <span class="naira">≈ ₦26,600</span></div><button class="btn" onclick="orderWhatsApp('X Premium Plus (6 Months)', '19')">Order Plus</button></div>
-          <div class="plan-card"><h3>Premium Plus - 12 Months</h3><div class="price">$27 <span class="naira">≈ ₦37,800</span></div><button class="btn" onclick="orderWhatsApp('X Premium Plus (12 Months)', '27')">Order Plus</button></div>
+          <!-- X Normal -->
+          <div class="plan-card">
+            <h3>X Premium Normal</h3>
+            <div style="margin:1rem 0;">
+              <strong>3 Months:</strong> $7 ≈ ₦9,800<br>
+              <strong>6 Months:</strong> $11 ≈ ₦15,400
+            </div>
+            <ul class="features">
+              <li>✔ Blue verification badge</li>
+              <li>✔ Increased visibility & reach</li>
+              <li>✔ Ability to edit posts</li>
+              <li>✔ Longer posts & videos</li>
+              <li>✔ Priority in replies</li>
+              <li>✔ Reduced ads</li>
+              <li>✔ Basic AI (Grok access)</li>
+              <li>✔ Monetization features (if eligible)</li>
+            </ul>
+            <button class="btn" onclick="orderWhatsApp('X Premium Normal', '7')">Order X Normal</button>
+          </div>
+
+          <!-- X Plus -->
+          <div class="plan-card">
+            <h3>X Premium Plus</h3>
+            <div style="margin:1rem 0;">
+              <strong>3 Months:</strong> $15 ≈ ₦21,000<br>
+              <strong>6 Months:</strong> $19 ≈ ₦26,600<br>
+              <strong>12 Months:</strong> $27 ≈ ₦37,800
+            </div>
+            <ul class="features">
+              <li>✔ Blue verification badge</li>
+              <li>✔ 🚫 No ads (completely ad-free)</li>
+              <li>✔ Highest visibility & maximum reach boost</li>
+              <li>✔ Ability to edit posts</li>
+              <li>✔ Longer posts & videos</li>
+              <li>✔ Top priority in replies</li>
+              <li>✔ Advanced AI (Grok with higher limits)</li>
+              <li>✔ Monetization features (higher earning potential)</li>
+            </ul>
+            <button class="btn" onclick="orderWhatsApp('X Premium Plus', '15')">Order X Premium Plus</button>
+          </div>
         </div>
       </div>
     </div>
@@ -270,6 +348,7 @@
 
   </div>
 
+  <!-- Contact -->
   <div class="contact" style="text-align:center; padding:4rem 5%; background:#111; margin:5rem 0; border-radius:24px;">
     <h2>Ready to Order?</h2>
     <p style="font-size:1.5rem; margin:1.5rem 0;">
@@ -286,4 +365,4 @@
   </script>
 
 </body>
-        </html>
+                                                           </html>
